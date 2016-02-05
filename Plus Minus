@@ -1,0 +1,40 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+
+int main(){
+    int n; 
+    scanf("%d",&n);
+    int arr[n];
+    float pos_count=0.0, neg_count=0.0, zero_count =0.0;
+    for(int arr_i = 0; arr_i < n; arr_i++){
+       scanf("%d",&arr[arr_i]);
+      }
+    
+    for(int i=0; i<n; i++)
+            {
+            if(arr[i]>0)
+                {
+                pos_count++;
+            }
+            else if(arr[i]<0)
+                {
+                neg_count++;
+            }
+            else if(arr[i] == 0)
+                {
+                zero_count++;
+            }
+        }
+        
+        printf("%f", pos_count/n);
+        printf("\n%f", neg_count/n);
+        printf("\n%f", zero_count/n);
+    
+    
+    return 0;
+}
