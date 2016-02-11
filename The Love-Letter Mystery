@@ -1,0 +1,37 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+class Solution {
+/* Complete the function below.*/
+
+    static void mystery(string[] letter) {
+        for(int j=0; j<letter.Length; j++)
+            {
+            String s = letter[j];
+            int l = s.Length;
+            int count =0;
+            for(int i=0; i<l/2; i++){
+                int k = Math.Abs((int)s[l-i-1]-(int)s[i]);
+                if(k!=0)
+                    count+=k;
+            }
+            
+            Console.WriteLine(count);
+        }     
+    }
+ static void Main(String[] args) {
+        
+        int _letter_size = 0;
+        _letter_size = Convert.ToInt32(Console.ReadLine());
+        string[] _letter = new string [_letter_size];
+        string _letter_item;
+        for(int _letter_i = 0; _letter_i < _letter_size; _letter_i++) {
+            _letter_item = Console.ReadLine();
+            _letter[_letter_i] = _letter_item;
+        }
+        
+        mystery(_letter);
+        
+    }
+}
