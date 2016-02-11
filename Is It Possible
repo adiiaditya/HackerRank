@@ -7,8 +7,6 @@ class Solution {
  
     static string isitpossible(int a, int b, int c, int d) {
         
-        if(a == c && b==d)
-            return "Yes";
         while(!(a==c && b==d) && Math.Abs(c-d)>0)
             {
             if(c>d)
