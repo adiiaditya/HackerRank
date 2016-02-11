@@ -1,0 +1,34 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+class Solution {
+/* Complete the function below. */
+    static void max_Chocolates(int[] arr) {
+        for(int i=0; i< arr.Length; i++)
+            {
+            if(arr[i]%2 == 0)
+                {
+                Console.WriteLine(Math.Pow(arr[i]/2,2));
+            }
+            else
+                {
+                Console.WriteLine(Math.Ceiling((double)arr[i]/2) * Math.Floor((double)arr[i]/2));
+            }
+        }
+    }
+static void Main(String[] args) {
+        
+        int _arr_size = 0;
+        _arr_size = Convert.ToInt32(Console.ReadLine());
+        int[] _arr = new int [_arr_size];
+        int _arr_item;
+        for(int _arr_i = 0; _arr_i < _arr_size; _arr_i++) {
+            _arr_item = Convert.ToInt32(Console.ReadLine());
+            _arr[_arr_i] = _arr_item;
+        }
+        
+        max_Chocolates(_arr);
+        
+    }
+}
