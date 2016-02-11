@@ -1,0 +1,48 @@
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+class Solution {
+/* Complete the function below. */
+ 
+    static string isitpossible(int a, int b, int c, int d) {
+        
+        if(a == c && b==d)
+            return "Yes";
+        while(!(a==c && b==d) && Math.Abs(c-d)>0)
+            {
+            if(c>d)
+                c-=d;
+            else
+                d-=c;
+        }
+        
+        if(a==c && b==d)
+            return "Yes";
+        else
+            return "No";
+
+    }
+ static void Main(String[] args) {
+        string fileName = System.Environment.GetEnvironmentVariable("OUTPUT_PATH");
+        TextWriter tw = new StreamWriter(@fileName, true);
+        string res;
+        int _a;
+        _a = Convert.ToInt32(Console.ReadLine());
+        
+        int _b;
+        _b = Convert.ToInt32(Console.ReadLine());
+        
+        int _c;
+        _c = Convert.ToInt32(Console.ReadLine());
+        
+        int _d;
+        _d = Convert.ToInt32(Console.ReadLine());
+        
+        res = isitpossible(_a, _b, _c, _d);
+        tw.WriteLine(res);
+        
+        tw.Flush();
+        tw.Close();
+    }
+}
