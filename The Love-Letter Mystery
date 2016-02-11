@@ -9,17 +9,18 @@ class Solution {
         for(int j=0; j<letter.Length; j++)
             {
             String s = letter[j];
-            int l = s.Length;
+            int length = s.Length;
             int count =0;
-            for(int i=0; i<l/2; i++){
-                int k = Math.Abs((int)s[l-i-1]-(int)s[i]);
-                if(k!=0)
-                    count+=k;
+            for(int i=0; i<length/2; i++){
+                int numOfOperations = Math.Abs((int)s[length-i-1]-(int)s[i]);
+                if(numOfOperations!=0)
+                    count+=numOfOperations;
             }
             
             Console.WriteLine(count);
         }     
     }
+
  static void Main(String[] args) {
         
         int _letter_size = 0;
